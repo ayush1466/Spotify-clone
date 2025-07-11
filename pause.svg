@@ -1,0 +1,9 @@
+<!-- pause.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 48 48">
+  <!-- Green circle background -->
+  <circle cx="24" cy="24" r="24" fill="#1DB954"/>
+  
+  <!-- White pause bars -->
+  <rect x="16" y="14" width="5" height="20" rx="1" fill="white"/>
+  <rect x="27" y="14" width="5" height="20" rx="1" fill="white"/>
+</svg>

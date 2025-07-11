@@ -1,21 +1,36 @@
+let songs = [];
+let currentIndex = 0;
+const audio = new Audio();
+const playBtn = document.querySelector('.playbtn img');
+let isPlaying = false;
+
+// Load songs.json
 fetch('songs.json')
   .then(res => res.json())
   .then(data => {
-    console.log("Fetched songs:", data);
-    // access like: data[0].title or data[0].url
+    songs = data;
+    console.log("Fetched songs:", songs);
+    if (songs.length > 0) {
+      audio.src = songs[currentIndex].url;
+    }
   })
   .catch(err => console.error("Error fetching songs.json", err));
 
-const audio = new Audio();
+// Play/Pause logic
+document.querySelector('.playbtn').addEventListener('click', () => {
+  if (!audio.src) return;
 
-fetch('songs.json')
-  .then(res => res.json())
-  .then(data => {
-    const firstSong = data[0];
-    if (firstSong) {
-      audio.src = firstSong.url;
-      audio.play();
-      console.log("Now playing:", firstSong.title);
-    }
-  })
-  .catch(err => console.error("Error fetching or playing song:", err));
+  if (isPlaying) {
+    audio.pause();
+    playBtn.src = 'play.svg';
+  } else {
+    audio.play();
+    playBtn.src = 'pause.svg';
+  }
+  isPlaying = !isPlaying;
+});
+
+
+
+
+
