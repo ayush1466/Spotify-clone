@@ -23,20 +23,7 @@
             <h2>Your library</h2>
           </div>
           <div class="songlist">
-            <ul id="library-songs">
-              <li>Sahiba
-                <img src="play.svg" width="40vh" alt="">
-              </li>
-              <li>Ranjhan
-                 <img src="play.svg" width="40vh" alt="">
-              </li>
-              <li>Finding Her
-                 <img src="play.svg" width="40vh" alt="">
-              </li>
-              <li>Making Memories
-                 <img src="play.svg" width="40vh" alt="">
-              </li>
-            </ul>
+            <ul id="library-songs"></ul>
           </div>
           <div class="footer">
             <div class="footer">
@@ -149,7 +136,9 @@
                 alt=""
                 class="mMx2LUixlnN_Fu45JpFB yMQTWVwLJ5bV8VGiaqU3 yOKoknIYYzAE90pe7_SE Yn2Ei5QZn19gria6LjZj"
               />
-              <p style="display: flex; justify-content: center;">By Aditya Rikhari</p>
+              <p style="display: flex; justify-content: center">
+                By Aditya Rikhari
+              </p>
             </div>
             <div class="card">
               <div class="play">
@@ -167,12 +156,20 @@
                   <path d="M18 34V14L34 24L18 34Z" fill="white" />
                 </svg>
               </div>
-            <img aria-hidden="false" draggable="false" loading="lazy" src="https://i.scdn.co/image/ab67616d00001e02773c5f60bcb309ef8802e4ef" data-testid="card-image" alt="" class="mMx2LUixlnN_Fu45JpFB yMQTWVwLJ5bV8VGiaqU3 Yn2Ei5QZn19gria6LjZj">
-              <p style="display: flex; justify-content: center;">From "Do Patti"</p>
-              
+              <img
+                aria-hidden="false"
+                draggable="false"
+                loading="lazy"
+                src="https://i.scdn.co/image/ab67616d00001e02773c5f60bcb309ef8802e4ef"
+                data-testid="card-image"
+                alt=""
+                class="mMx2LUixlnN_Fu45JpFB yMQTWVwLJ5bV8VGiaqU3 Yn2Ei5QZn19gria6LjZj"
+              />
+              <p style="display: flex; justify-content: center">
+                From "Do Patti"
+              </p>
             </div>
-            
- 
+
             <div class="card">
               <div class="play">
                 <svg
@@ -198,7 +195,7 @@
                 alt=""
                 class="mMx2LUixlnN_Fu45JpFB yMQTWVwLJ5bV8VGiaqU3 yOKoknIYYzAE90pe7_SE Yn2Ei5QZn19gria6LjZj"
               />
-              <p style="display: flex; justify-content: center;"> By Kushagra</p>
+              <p style="display: flex; justify-content: center">By Kushagra</p>
             </div>
             <div class="card">
               <div class="play">
@@ -216,7 +213,7 @@
                   <path d="M18 34V14L34 24L18 34Z" fill="white" />
                 </svg>
               </div>
-              
+
               <img
                 aria-hidden="false"
                 draggable="false"
@@ -226,29 +223,37 @@
                 alt=""
                 class="mMx2LUixlnN_Fu45JpFB yMQTWVwLJ5bV8VGiaqU3 Yn2Ei5QZn19gria6LjZj"
               />
-              <p style="display: flex; justify-content: center;"> By Karan Aujla</p>
+              <p style="display: flex; justify-content: center">
+                By Karan Aujla
+              </p>
             </div>
           </div>
         </div>
 
         <div class="playbar">
           <div class="songinfo">
-            <p>sahiba</p>
+            <p id="songinfo-text">Select a song</p>
           </div>
           <div class="songbutton">
             <button class="prevbtn btn">
               <img id="prev" src="prevsong.svg" alt="" />
             </button>
-            <button class="playbtn btn"><img id="playpause" src="play.svg" alt="" /></button>
+            <button class="playbtn btn">
+              <img id="playpause" src="play.svg" alt="" />
+            </button>
             <button class="nextbtn btn">
               <img id="next" src="nextsong.svg" alt="" />
             </button>
           </div>
-          <div class="songtime"></div>
+          <div class="songtime">
+            <span id="current">0:00</span> / <span id="duration">0:00</span>
+          </div>
+          <div class="progress-container">
+            <input type="range" id="progress" value="0" min="0" max="100" />
+          </div>
         </div>
       </div>
     </div>
     <script src="script.js"></script>
   </body>
 </html>
-

@@ -15,13 +15,13 @@ body {
 }
 .left {
   width: 25vw;
-  padding: 10px;
+   display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full screen height */
+  min-width: 240px;
 }
 .right {
   width: 75vw;
-}
-
-.home {
 }
 
 .home ul li {
@@ -50,12 +50,10 @@ body {
 }
 
 .library {
-  min-height: 80vh;
-  position: relative;
-  color: white;
-  font-family: "Helvetica Neue", sans-serif;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
-  max-height: 70vh;
 }
 
 .library .heading {
@@ -141,18 +139,27 @@ body {
 
 
 .footer {
+  margin-top: auto; /* Push to bottom */
+  background-color: #282828;
+  border-top: 1px solid #282828;
+  font-size: 0.8rem;
+  color: #b3b3b3;
   display: flex;
-  font-size: 10px;
-  color: grey;
-  gap: 17px;
-  position: absolute;
-  bottom: 0;
-  padding: 10px 0;
-  width: 90vh;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  line-height: 1.5;
+  justify-content: flex-start;
 }
 
 .footer a {
-  color: gray;
+  text-decoration: none;
+  color: #b3b3b3;
+  transition: color 0.3s ease;
+  margin-right: 1rem;
+}
+
+.footer a:hover {
+  color: #fff;
 }
 
 .right {
@@ -184,10 +191,10 @@ body {
 
 .card {
   width: 200px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #645e5e3b;
   position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .card > * {
@@ -198,15 +205,17 @@ body {
   object-fit: contain;
 }
 
-.play {
+.card:hover .play {
+  opacity: 1;
+}
+
+.card .play {
   position: absolute;
-  top: 76%;
-  left: 91%;
-  transform: translate(-50%, -50%);
-  width: 12vw; /* Responsive size based on viewport width */
-  max-width: 80px; /* Limit maximum size */
-  min-width: 40px; /* Ensure it's still visible on small screens */
-  aspect-ratio: 1/1; /* Keep it square */
+  bottom: 30px;
+  right: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
 .signupbtn {
@@ -246,10 +255,10 @@ body {
 .playbar {
   position: absolute;
   bottom: 0;
-  background-color: rgb(28, 50, 28);
+  background-color: #252323;
   width: 100%;
   padding: 12px;
-  width: 92%;
+  width: 95%;
 }
 
 .songbutton {
@@ -287,3 +296,38 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.progress-container {
+  width: 100%;
+  padding: 0 20px;
+  margin: 8px 0;
+}
+
+#progress {
+  width: 100%;
+  height: 4px;
+  background: #404040;
+  border-radius: 5px;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  accent-color: #1DB954; /* green Spotify style */
+}
+
+#progress::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
